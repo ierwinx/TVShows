@@ -11,14 +11,14 @@ class DetalleViewController: UIViewController {
     @IBOutlet weak var likeImage: UIImageView!
     @IBOutlet weak var calificacionImage: UIImageView!
     
+    //MARK: Propiedades
+    public var idTvShow: Int!
+    public var tvShow: Series!
+    
     //MARK: Ciclo de vida
     override func viewDidLoad() {
         super.viewDidLoad()
-        tocarCorazon(view: likeImage)
-    }
-    
-    //MARK: Metodos
-    public func llamada(idTvShow: Int?, tvShow: Series?) -> Void {
+        
         if idTvShow != nil {
             let tTvShowService = TvShowService()
             tTvShowService.consulta(id: idTvShow!) { (callback) in
@@ -49,9 +49,6 @@ class DetalleViewController: UIViewController {
                 return
             }
             
-            print(show)
-            print(detalle)
-            
             self.likeImage.image = UIImage(named: "like2")
             self.coverImage.image = UIImage(data: imagen)
             self.nombreLabel.text = nombre
@@ -60,6 +57,8 @@ class DetalleViewController: UIViewController {
             self.calificacionImage.image = UIImage(named: "\(Int(round(detalle.rating * 0.5)))")
             self.descripcionTextView.text = descripcion
         }
+        
+        tocarCorazon(view: likeImage)
     }
     
     //MARK: Eventos
@@ -75,6 +74,10 @@ class DetalleViewController: UIViewController {
         } else {
             self.likeImage.image = UIImage(named: "like1")
         }
+        
+    }
+    
+    private func validaFavorito() -> Void {
         
     }
     

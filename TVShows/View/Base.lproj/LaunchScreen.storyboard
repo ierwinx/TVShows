@@ -24,10 +24,19 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4nK-Qe-qJg">
+                                        <rect key="frame" x="87" y="384" width="240" height="240"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="A3z-Pj-gJ4"/>
+                                            <constraint firstAttribute="height" constant="240" id="Vpb-7t-0bW"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.44886070490000002" green="0.26020544769999998" blue="0.96052080390000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstItem="4nK-Qe-qJg" firstAttribute="centerX" secondItem="jWC-Vz-K2y" secondAttribute="centerX" id="2d2-Aj-WWh"/>
                                     <constraint firstItem="hQ8-f1-J2K" firstAttribute="centerY" secondItem="jWC-Vz-K2y" secondAttribute="centerY" constant="-150" id="5e7-La-Y3M"/>
+                                    <constraint firstItem="4nK-Qe-qJg" firstAttribute="top" secondItem="hQ8-f1-J2K" secondAttribute="bottom" constant="50" id="7uw-OV-oyX"/>
                                     <constraint firstItem="hQ8-f1-J2K" firstAttribute="centerX" secondItem="jWC-Vz-K2y" secondAttribute="centerX" id="Vgw-PK-YKA"/>
                                 </constraints>
                             </view>

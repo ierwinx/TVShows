@@ -21,22 +21,22 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="TV Shows" id="MfR-Xu-xnQ"/>
                     <connections>
-                        <segue destination="aky-0T-WJK" kind="showDetail" identifier="detalle" id="VWO-1v-4EK"/>
+                        <segue destination="lu0-uo-aId" kind="showDetail" identifier="detalle" id="7il-Yu-bMA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G3P-rE-tEQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="657" y="-147"/>
         </scene>
-        <!--DetallePelicula-->
-        <scene sceneID="eWK-05-Rxc">
+        <!--Detalle-->
+        <scene sceneID="0iA-Ag-chG">
             <objects>
-                <viewControllerPlaceholder storyboardName="DetallePelicula" id="aky-0T-WJK" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="8CL-fi-ar4"/>
+                <viewControllerPlaceholder storyboardName="Detalle" id="lu0-uo-aId" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="YIg-Sr-wzj"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CQ8-RC-p4e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V2D-Pm-pbw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1441" y="-147"/>
+            <point key="canvasLocation" x="1388" y="-147"/>
         </scene>
         <!--Tv Shows-->
         <scene sceneID="xWy-JV-lSv">

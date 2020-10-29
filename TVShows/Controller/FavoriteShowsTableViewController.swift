@@ -88,7 +88,7 @@ class FavoriteShowsTableViewController: UITableViewController {
         if segue.identifier == "detalle" {
             let detalle = segue.destination as! DetalleViewController
             let serie = tvShows[seleccion] as! Series
-            detalle.llamada(idTvShow: nil, tvShow: serie)
+            detalle.tvShow = serie
         }
     }
     

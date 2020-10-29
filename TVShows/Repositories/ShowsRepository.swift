@@ -19,24 +19,6 @@ class ShowsRepository {
             return []
         }
     }
-    /*public static func consultar() -> NSManagedObject? {
-        let managedObjectContext: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        let entidad: String = "Detalle"
-        let peticion = NSFetchRequest<Detalle>(entityName: entidad)
-        peticion.predicate = NSPredicate(format: "id != nil")
-        
-        do {
-            let resultado = try managedObjectContext.fetch(peticion)
-            guard let result = resultado.first else {
-                return nil
-            }
-            return result
-        } catch let error as NSError {
-            print(error)
-            return nil
-        }
-    }*/
     
     public static func consultar(id: Int) -> NSManagedObject? {
         let managedObjectContext: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -106,7 +88,7 @@ class ShowsRepository {
         detalle.imagen = imgData2
         detalle.language = tvShow.language ?? "unknown"
         detalle.pais = tvShow.webChannel?.country?.name ?? "unknown"
-        detalle.rating = 2.2
+        detalle.rating = tvShow.rating?.average ?? 10.0
         
         detalle.serie = serie
 

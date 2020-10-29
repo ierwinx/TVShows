@@ -75,7 +75,7 @@ class TvShowsTableViewController: UITableViewController {
         if segue.identifier == "detalle" {
             let detalle = segue.destination as! DetalleViewController
             let serie = tvShows[seleccion]
-            detalle.llamada(idTvShow: serie.id!, tvShow: nil)
+            detalle.idTvShow = serie.id
         }
     }
     
