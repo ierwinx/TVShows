@@ -24,26 +24,26 @@
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45P-qk-UgS">
-                                <rect key="frame" x="20" y="329" width="374" height="38"/>
-                                <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="31"/>
+                                <rect key="frame" x="20" y="326.5" width="374" height="43"/>
+                                <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="35"/>
                                 <color key="textColor" name="BarraTexto"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Descripcion" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="Ukg-A2-RJr">
-                                <rect key="frame" x="20" y="453" width="374" height="423"/>
+                                <rect key="frame" x="20" y="455.5" width="374" height="420.5"/>
                                 <color key="textColor" name="BarraTexto"/>
                                 <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5" translatesAutoresizingMaskIntoConstraints="NO" id="j1J-SI-Xgx">
-                                <rect key="frame" x="20" y="417" width="136" height="31"/>
+                                <rect key="frame" x="20" y="419.5" width="136" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="XDU-GG-POy"/>
                                     <constraint firstAttribute="width" constant="136" id="zcE-WS-ZMk"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mER-49-xrP">
-                                <rect key="frame" x="20" y="377" width="61" height="30"/>
+                                <rect key="frame" x="20" y="379.5" width="61" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="sL1-RB-o0D"/>
                                 </constraints>
@@ -52,7 +52,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lenguaje" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xo-uT-Qrd">
-                                <rect key="frame" x="327" y="377" width="67" height="30"/>
+                                <rect key="frame" x="327" y="379.5" width="67" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="R1C-j8-FXd"/>
                                 </constraints>

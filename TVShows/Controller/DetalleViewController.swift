@@ -14,6 +14,7 @@ class DetalleViewController: UIViewController {
     //MARK: Propiedades
     public var idTvShow: Int!
     public var tvShow: Series!
+    public var tvShowRes: TvShowRes!
     
     //MARK: Ciclo de vida
     override func viewDidLoad() {
@@ -35,7 +36,7 @@ class DetalleViewController: UIViewController {
                     generosString += "\(i) "
                 }
                 
-                self.likeImage.image = UIImage(named: "like1")
+                self.likeImage.image = self.validaFavorito(id: self.idTvShow!) ? UIImage(named: "like2") : UIImage(named: "like1")
                 self.coverImage.image = UIImage(data: imgUrl)
                 self.nombreLabel.text = nombre
                 self.generoLabel.text = generosString
@@ -71,14 +72,29 @@ class DetalleViewController: UIViewController {
     @objc private func corazonTocado(sender: UITapGestureRecognizer) -> Void {
         if self.likeImage.image == UIImage(named: "like1") {
             self.likeImage.image = UIImage(named: "like2")
+            self.alerta(valida: ShowsRepository.guardar(tvShow: tvShowRes), eliminar: false)
         } else {
             self.likeImage.image = UIImage(named: "like1")
+            self.alerta(valida: ShowsRepository.eliminar(id: idTvShow != nil ? idTvShow : Int(tvShow.id)), eliminar: true)
         }
         
     }
     
-    private func validaFavorito() -> Void {
-        
+    //MARK: Metodos
+    private func validaFavorito(id: Int) -> Bool {
+        guard let _ = ShowsRepository.consultar(id: id) as? Series else {
+            return false
+        }
+
+        return true
+    }
+    
+    private func alerta(valida: Bool, eliminar: Bool) -> Void {
+        let titulo = valida ? ( eliminar ? "Eliminado" : "Guardado" ) : "Error"
+        let mensaje = valida ? ( eliminar ? "Se elimino de tus favoritos" : "Se agrego a favoritos" ) : "Error al realizar operación"
+        let alerta = UIAlertController(title: titulo, message: mensaje, preferredStyle: .alert)
+        alerta.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(alerta, animated: true, completion: nil)
     }
     
 }

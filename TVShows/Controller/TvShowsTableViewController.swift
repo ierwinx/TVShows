@@ -76,6 +76,7 @@ class TvShowsTableViewController: UITableViewController {
             let detalle = segue.destination as! DetalleViewController
             let serie = tvShows[seleccion]
             detalle.idTvShow = serie.id
+            detalle.tvShowRes = serie
         }
     }
     
