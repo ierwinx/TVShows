@@ -11,7 +11,7 @@
             <objects>
                 <tableViewController id="XTc-R4-8KT" customClass="FavoriteShowsTableViewController" customModule="TVShows" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3Ii-Gp-gl6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <connections>
@@ -20,10 +20,23 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Favorite Shows" id="PMu-Mb-kDA"/>
+                    <connections>
+                        <segue destination="Ncd-Ce-LO4" kind="show" identifier="detalle" id="ljh-Ic-qXa"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zek-DR-nvb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1773.913043478261" y="458.70535714285711"/>
+        </scene>
+        <!--DetallePelicula-->
+        <scene sceneID="VnF-tM-p5P">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DetallePelicula" id="Ncd-Ce-LO4" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="hoD-fL-6NG"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gU8-aU-tcG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2484" y="459"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oqM-J0-K4k">
@@ -31,8 +44,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VeW-pE-70V" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="2p7-d9-Bye"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="op3-9y-WRd">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="op3-9y-WRd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.44886070490000002" green="0.26020544769999998" blue="0.96052080390000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -7,7 +7,7 @@ class CeldaPeliculaTableViewCell: UITableViewCell {
     @IBOutlet weak var titulo: UILabel!
     
     //MARK: Properties
-    private var id: Int!
+    public var id: Int!
     
     //MARK: Ciclo de vida
     override func awakeFromNib() {
@@ -15,8 +15,17 @@ class CeldaPeliculaTableViewCell: UITableViewCell {
     }
 
     //MARK: Metodos
-    public func llenarInfo() -> Void {
+    public func llenarInfo(tvShows: TvShowRes) -> Void {
+        guard let urlString = tvShows.image?.medium, let nombre = tvShows.name, let idshow = tvShows.id else {
+            return
+        }
         
+        guard let url = URL(string: urlString) else { return }
+        guard let imgUrl = try? Data.init(contentsOf: url) else { return }
+        
+        imagen.image = UIImage(data: imgUrl)
+        titulo.text = nombre
+        id = idshow
     }
     
     //MARK: atributos
