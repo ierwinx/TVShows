@@ -1,5 +1,5 @@
 //
-//  Detalle+CoreDataClass.swift
+//  Series+CoreDataClass.swift
 //  TVShows
 //
 //  Created by Erwin on 29/10/20.
@@ -11,6 +11,6 @@ import Foundation
 import CoreData
 
 
-public class Detalle: NSManagedObject {
+public class Series: NSManagedObject {
 
 }
