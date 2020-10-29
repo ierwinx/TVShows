@@ -11,7 +11,7 @@
             <objects>
                 <tableViewController id="dVZ-Kz-lOS" customClass="TvShowsTableViewController" customModule="TVShows" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="psY-TZ-4HY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <connections>
@@ -21,12 +21,12 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="TV Shows" id="MfR-Xu-xnQ"/>
                     <connections>
-                        <segue destination="aky-0T-WJK" kind="show" identifier="detalle" id="VWO-1v-4EK"/>
+                        <segue destination="aky-0T-WJK" kind="showDetail" identifier="detalle" id="VWO-1v-4EK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G3P-rE-tEQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2086" y="-147"/>
+            <point key="canvasLocation" x="657" y="-147"/>
         </scene>
         <!--DetallePelicula-->
         <scene sceneID="eWK-05-Rxc">
@@ -36,7 +36,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQ8-RC-p4e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2832" y="-147"/>
+            <point key="canvasLocation" x="1441" y="-147"/>
         </scene>
         <!--Tv Shows-->
         <scene sceneID="xWy-JV-lSv">
@@ -44,10 +44,9 @@
                 <navigationController id="EHn-qE-b6N" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Tv Shows" image="list.dash" catalog="system" selectedImage="list.dash" id="O4M-DU-qY1"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" largeTitles="YES" id="MXc-ch-H3a">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="MXc-ch-H3a">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.44886070490000002" green="0.26020544769999998" blue="0.96052080390000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -58,7 +57,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKW-Wd-glc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1204" y="-147"/>
+            <point key="canvasLocation" x="-446" y="-147"/>
         </scene>
     </scenes>
     <resources>
