@@ -21,7 +21,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Favorites" id="Q1n-ep-loQ"/>
                     <connections>
-                        <segue destination="Ncd-Ce-LO4" kind="showDetail" identifier="∫" id="I4j-Rr-ojo"/>
+                        <segue destination="Ncd-Ce-LO4" kind="showDetail" identifier="detalle" id="I4j-Rr-ojo"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Rl-h7-kBG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

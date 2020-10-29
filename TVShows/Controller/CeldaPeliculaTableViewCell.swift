@@ -28,6 +28,15 @@ class CeldaPeliculaTableViewCell: UITableViewCell {
         id = idshow
     }
     
+    public func llenarDatosBase(tvShow: Series) -> Void {
+        guard let imagenData = tvShow.image, let nombre = tvShow.name else {
+            return
+        }
+        imagen.image = UIImage(data: imagenData)
+        titulo.text = nombre
+        id = Int(tvShow.id)
+    }
+    
     //MARK: atributos
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

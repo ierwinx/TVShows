@@ -1,15 +1,21 @@
 import UIKit
+import CoreData
 
 class FavoriteShowsTableViewController: UITableViewController {
     
     //MARK: Propiedades
     private let cellName: String = "CeldaPeliculaTableViewCell"
     private var seleccion: Int!
+    private var tvShows: Array<NSManagedObject> = []
 
     //MARK: Ciclo de vida
     override func viewDidLoad() {
         super.viewDidLoad()
         disenoBarra()
+        let datos = ShowsRepository.consultar()
+        if datos.count > 0 {
+            tvShows = datos
+        }
         self.tableView.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
     }
     
@@ -25,15 +31,11 @@ class FavoriteShowsTableViewController: UITableViewController {
         self.navigationController?.navigationBar.backgroundColor = UIColor(named: "Barras")
     }
     
-    private func alerta() -> Void {
-        let alerta = UIAlertController(title: "Eliminar", message: "¿Deseas eliminar de favoritos?", preferredStyle: .alert)
-        let si = UIAlertAction(title: "Si", style: .destructive) { accion in
-            
-        }
-        let no = UIAlertAction(title: "No", style: .default, handler: nil)
-        alerta.addAction(si)
-        alerta.addAction(no)
-        
+    private func alerta(status: Bool) -> Void {
+        let titulo = status ? "Eliminado" : "Error"
+        let mensaje = status ? "Se elimino de favoritos" : "Error al eliminar"
+        let alerta = UIAlertController(title: titulo, message: mensaje, preferredStyle: .alert)
+        alerta.addAction(UIAlertAction(title: "Ok", style: .default))
         present(alerta, animated: true, completion: nil)
     }
 
@@ -43,18 +45,34 @@ class FavoriteShowsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.tvShows.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celda = tableView.dequeueReusableCell(withIdentifier: cellName, for: indexPath) as! CeldaPeliculaTableViewCell
+        let serie = tvShows[indexPath.row] as! Series
+        celda.llenarDatosBase(tvShow: serie)
         return celda
     }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let eliminar = UIContextualAction(style: .destructive, title: "Eliminar") {  (contextualAction, view, boolValue) in
-            self.alerta()
+            let alerta = UIAlertController(title: "Eliminar", message: "¿Deseas eliminar de favoritos?", preferredStyle: .alert)
+            let si = UIAlertAction(title: "Si", style: .destructive) { accion in
+                let serie = self.tvShows[indexPath.row] as! Series
+                let elimina = ShowsRepository.eliminar(id: Int(serie.id))
+                self.alerta(status: elimina)
+                if elimina {
+                    self.tvShows.remove(at: indexPath.row)
+                    tableView.reloadData()
+                }
+            }
+            let no = UIAlertAction(title: "No", style: .default, handler: nil)
+            alerta.addAction(si)
+            alerta.addAction(no)
+            
+            self.present(alerta, animated: true, completion: nil)
         }
         let swipeActions = UISwipeActionsConfiguration(actions: [eliminar])
         return swipeActions
@@ -62,14 +80,15 @@ class FavoriteShowsTableViewController: UITableViewController {
     
     //MARK: Delegados
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        seleccion = indexPath.row + 1
+        seleccion = indexPath.row
         performSegue(withIdentifier: "detalle", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detalle" {
             let detalle = segue.destination as! DetalleViewController
-            detalle.id = seleccion
+            let serie = tvShows[seleccion] as! Series
+            detalle.llamadaDesdeAlmacenamiento(tvShow: serie)
         }
     }
     

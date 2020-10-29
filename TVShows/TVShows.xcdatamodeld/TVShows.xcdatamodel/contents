@@ -4,25 +4,23 @@
         <attribute name="canal" optional="YES" attributeType="String"/>
         <attribute name="detalle" optional="YES" attributeType="String"/>
         <attribute name="duracion" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="estatus" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="estatus" optional="YES" attributeType="String"/>
         <attribute name="generos" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="imagen" optional="YES" attributeType="URI"/>
+        <attribute name="imagen" optional="YES" attributeType="Binary"/>
         <attribute name="language" optional="YES" attributeType="String"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="pais" optional="YES" attributeType="String"/>
         <attribute name="rating" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="url" optional="YES" attributeType="URI"/>
-        <relationship name="serie" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Serires" inverseName="detalle" inverseEntity="Serires"/>
+        <relationship name="serie" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Series" inverseName="detalle" inverseEntity="Series"/>
     </entity>
-    <entity name="Serires" representedClassName=".Serires" syncable="YES">
+    <entity name="Series" representedClassName=".Series" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="detalle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Detalle" inverseName="serie" inverseEntity="Detalle"/>
+        <relationship name="detalle" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Detalle" inverseName="serie" inverseEntity="Detalle"/>
     </entity>
     <elements>
-        <element name="Serires" positionX="-36" positionY="9" width="128" height="103"/>
-        <element name="Detalle" positionX="0" positionY="72" width="128" height="238"/>
+        <element name="Detalle" positionX="0" positionY="72" width="128" height="208"/>
+        <element name="Series" positionX="-431.3984375" positionY="142.9765625" width="128" height="103"/>
     </elements>
 </model>

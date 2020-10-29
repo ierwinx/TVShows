@@ -16,67 +16,80 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M2R-ir-aad">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M2R-ir-aad">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vyG-WK-A37">
+                            <view alpha="0.65000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vyG-WK-A37">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MbL-PH-ocR">
-                                <rect key="frame" x="20" y="407" width="374" height="82"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="8JN-eK-69Y">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lenguaje" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6W-Kn-8HM">
-                                                <rect key="frame" x="0.0" y="0.0" width="194" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" name="BarraTexto"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YjG-gc-Zjr">
-                                                <rect key="frame" x="194" y="0.0" width="180" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" name="BarraTexto"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8s-1Y-CGd">
-                                        <rect key="frame" x="0.0" y="20.5" width="374" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" name="BarraTexto"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripción" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHi-ck-TZ5">
-                                        <rect key="frame" x="0.0" y="41" width="374" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" name="BarraTexto"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calificacion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xd6-L8-vo8">
-                                        <rect key="frame" x="0.0" y="61.5" width="374" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" name="BarraTexto"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2PE-Az-ZpY">
+                                <rect key="frame" x="334" y="44" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="ZUJ-MB-Y8W"/>
+                                    <constraint firstAttribute="width" constant="60" id="gcF-W6-De9"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8s-1Y-CGd">
+                                <rect key="frame" x="20" y="359" width="374" height="38"/>
+                                <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="31"/>
+                                <color key="textColor" name="BarraTexto"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lenguaje" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6W-Kn-8HM">
+                                <rect key="frame" x="327" y="407" width="67" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="AlW-GK-ZOO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="17"/>
+                                <color key="textColor" name="BarraTexto"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calificacion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xd6-L8-vo8">
+                                <rect key="frame" x="20" y="437" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="6TE-2X-MVI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="17"/>
+                                <color key="textColor" name="BarraTexto"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YjG-gc-Zjr">
+                                <rect key="frame" x="20" y="407" width="61" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="BFJ-gI-9IW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="17"/>
+                                <color key="textColor" name="BarraTexto"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripción" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHi-ck-TZ5">
+                                <rect key="frame" x="20" y="477" width="374" height="21"/>
+                                <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="17"/>
+                                <color key="textColor" name="BarraTexto"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="vyG-WK-A37" firstAttribute="top" secondItem="7zI-1n-x3v" secondAttribute="top" id="E1b-ob-NKR"/>
-                            <constraint firstItem="M2R-ir-aad" firstAttribute="trailing" secondItem="SUz-Gg-yaz" secondAttribute="trailing" id="GS1-i6-qEO"/>
-                            <constraint firstAttribute="bottom" secondItem="M2R-ir-aad" secondAttribute="bottom" id="HFI-9z-kKr"/>
-                            <constraint firstItem="MbL-PH-ocR" firstAttribute="leading" secondItem="SUz-Gg-yaz" secondAttribute="leading" constant="20" id="OQm-1h-yHR"/>
-                            <constraint firstItem="SUz-Gg-yaz" firstAttribute="trailing" secondItem="MbL-PH-ocR" secondAttribute="trailing" constant="20" id="W2I-gW-sxO"/>
-                            <constraint firstItem="vyG-WK-A37" firstAttribute="leading" secondItem="SUz-Gg-yaz" secondAttribute="leading" id="YFO-CH-7lc"/>
-                            <constraint firstItem="M2R-ir-aad" firstAttribute="leading" secondItem="SUz-Gg-yaz" secondAttribute="leading" id="YRG-ha-6AE"/>
-                            <constraint firstAttribute="bottom" secondItem="vyG-WK-A37" secondAttribute="bottom" id="Zvp-Co-YUM"/>
-                            <constraint firstItem="MbL-PH-ocR" firstAttribute="centerY" secondItem="7zI-1n-x3v" secondAttribute="centerY" id="ido-WG-Aq1"/>
-                            <constraint firstItem="vyG-WK-A37" firstAttribute="trailing" secondItem="SUz-Gg-yaz" secondAttribute="trailing" id="o2v-rT-9ih"/>
-                            <constraint firstItem="M2R-ir-aad" firstAttribute="top" secondItem="7zI-1n-x3v" secondAttribute="top" id="tw1-2m-Q3i"/>
+                            <constraint firstItem="QHi-ck-TZ5" firstAttribute="top" secondItem="Xd6-L8-vo8" secondAttribute="bottom" constant="10" id="2Oc-cj-ZSt"/>
+                            <constraint firstItem="YjG-gc-Zjr" firstAttribute="leading" secondItem="SUz-Gg-yaz" secondAttribute="leading" constant="20" id="5FO-1t-Qwu"/>
+                            <constraint firstItem="K8s-1Y-CGd" firstAttribute="leading" secondItem="SUz-Gg-yaz" secondAttribute="leading" constant="20" id="9b8-kN-Nfs"/>
+                            <constraint firstItem="SUz-Gg-yaz" firstAttribute="trailing" secondItem="QHi-ck-TZ5" secondAttribute="trailing" constant="20" id="D8M-Y1-p8p"/>
+                            <constraint firstItem="YjG-gc-Zjr" firstAttribute="top" secondItem="K8s-1Y-CGd" secondAttribute="bottom" constant="10" id="KRQ-BF-t8n"/>
+                            <constraint firstItem="Xd6-L8-vo8" firstAttribute="leading" secondItem="SUz-Gg-yaz" secondAttribute="leading" constant="20" id="Wb1-fj-ql3"/>
+                            <constraint firstItem="K8s-1Y-CGd" firstAttribute="centerY" secondItem="7zI-1n-x3v" secondAttribute="centerY" constant="-70" id="Wfp-Uc-4MU"/>
+                            <constraint firstItem="n6W-Kn-8HM" firstAttribute="top" secondItem="K8s-1Y-CGd" secondAttribute="bottom" constant="10" id="e4K-wF-kjA"/>
+                            <constraint firstItem="K8s-1Y-CGd" firstAttribute="centerX" secondItem="7zI-1n-x3v" secondAttribute="centerX" id="lLn-EB-Hc8"/>
+                            <constraint firstItem="2PE-Az-ZpY" firstAttribute="top" secondItem="SUz-Gg-yaz" secondAttribute="top" id="nDb-uQ-JXe"/>
+                            <constraint firstItem="SUz-Gg-yaz" firstAttribute="trailing" secondItem="2PE-Az-ZpY" secondAttribute="trailing" constant="20" id="orU-jG-VaX"/>
+                            <constraint firstItem="SUz-Gg-yaz" firstAttribute="trailing" secondItem="Xd6-L8-vo8" secondAttribute="trailing" constant="20" id="rrB-fs-lZz"/>
+                            <constraint firstItem="QHi-ck-TZ5" firstAttribute="leading" secondItem="SUz-Gg-yaz" secondAttribute="leading" constant="20" id="rsR-Yv-0Xc"/>
+                            <constraint firstItem="Xd6-L8-vo8" firstAttribute="top" secondItem="K8s-1Y-CGd" secondAttribute="bottom" constant="40" id="uFK-tb-hxI"/>
+                            <constraint firstItem="SUz-Gg-yaz" firstAttribute="trailing" secondItem="K8s-1Y-CGd" secondAttribute="trailing" constant="20" id="v8R-i6-Kdz"/>
+                            <constraint firstItem="SUz-Gg-yaz" firstAttribute="trailing" secondItem="n6W-Kn-8HM" secondAttribute="trailing" constant="20" id="wdZ-Kz-QES"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SUz-Gg-yaz"/>
                     </view>
@@ -86,6 +99,7 @@
                         <outlet property="descripcionLabel" destination="QHi-ck-TZ5" id="1Xd-Uz-MsB"/>
                         <outlet property="generoLabel" destination="YjG-gc-Zjr" id="2W4-Rx-xxm"/>
                         <outlet property="lenguajeLabel" destination="n6W-Kn-8HM" id="gFj-kY-2tP"/>
+                        <outlet property="likeImage" destination="2PE-Az-ZpY" id="5YH-A3-oue"/>
                         <outlet property="nombreLabel" destination="K8s-1Y-CGd" id="R34-SS-fxC"/>
                     </connections>
                 </viewController>

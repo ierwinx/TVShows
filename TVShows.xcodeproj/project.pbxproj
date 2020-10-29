@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA43E981254B1E9800048662 /* ShowsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA43E980254B1E9800048662 /* ShowsRepository.swift */; };
+		AA43E9A6254B2C9900048662 /* Series+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA43E9A2254B2C9900048662 /* Series+CoreDataClass.swift */; };
+		AA43E9A7254B2C9900048662 /* Series+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA43E9A3254B2C9900048662 /* Series+CoreDataProperties.swift */; };
+		AA43E9A8254B2C9900048662 /* Detalle+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA43E9A4254B2C9900048662 /* Detalle+CoreDataClass.swift */; };
+		AA43E9A9254B2C9900048662 /* Detalle+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA43E9A5254B2C9900048662 /* Detalle+CoreDataProperties.swift */; };
 		AA5DEEBF2549D20E000FA46B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5DEEBE2549D20E000FA46B /* AppDelegate.swift */; };
 		AA5DEEC12549D20E000FA46B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5DEEC02549D20E000FA46B /* SceneDelegate.swift */; };
-		AA5DEEC32549D20E000FA46B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5DEEC22549D20E000FA46B /* ViewController.swift */; };
 		AA5DEEC62549D20E000FA46B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA5DEEC42549D20E000FA46B /* Main.storyboard */; };
 		AA5DEEC92549D20E000FA46B /* TVShows.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA5DEEC72549D20E000FA46B /* TVShows.xcdatamodeld */; };
 		AA5DEECB2549D213000FA46B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA5DEECA2549D213000FA46B /* Assets.xcassets */; };
@@ -23,6 +27,15 @@
 		AA5DEEF92549E656000FA46B /* DetalleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5DEEF82549E656000FA46B /* DetalleViewController.swift */; };
 		AA5DEEFB2549E710000FA46B /* TvShowsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5DEEFA2549E710000FA46B /* TvShowsTableViewController.swift */; };
 		AA5DEEFD2549E738000FA46B /* FavoriteShowsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5DEEFC2549E738000FA46B /* FavoriteShowsTableViewController.swift */; };
+		AA5DEF0B2549FDA6000FA46B /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5DEF0A2549FDA6000FA46B /* Schedule.swift */; };
+		AA5DEF0D2549FE19000FA46B /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5DEF0C2549FE19000FA46B /* Rating.swift */; };
+		AA5DEF0F2549FE68000FA46B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5DEF0E2549FE68000FA46B /* Network.swift */; };
+		AA5DEF112549FEA5000FA46B /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5DEF102549FEA5000FA46B /* Country.swift */; };
+		AA5DEF13254A001F000FA46B /* Externals.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5DEF12254A001F000FA46B /* Externals.swift */; };
+		AA5DEF15254A00E5000FA46B /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5DEF14254A00E5000FA46B /* Image.swift */; };
+		AA5DEF1C254A0454000FA46B /* TvShowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5DEF1B254A0453000FA46B /* TvShowService.swift */; };
+		AA5DEF1E254A1A6C000FA46B /* TvShowRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5DEF1D254A1A6C000FA46B /* TvShowRes.swift */; };
+		AA5DEF20254A1D2E000FA46B /* WebChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5DEF1F254A1D2E000FA46B /* WebChannel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +49,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA43E980254B1E9800048662 /* ShowsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsRepository.swift; sourceTree = "<group>"; };
+		AA43E9A2254B2C9900048662 /* Series+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Series+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AA43E9A3254B2C9900048662 /* Series+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Series+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AA43E9A4254B2C9900048662 /* Detalle+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detalle+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AA43E9A5254B2C9900048662 /* Detalle+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detalle+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AA5DEEBB2549D20E000FA46B /* TVShows.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVShows.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA5DEEBE2549D20E000FA46B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA5DEEC02549D20E000FA46B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AA5DEEC22549D20E000FA46B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AA5DEEC52549D20E000FA46B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA5DEEC82549D20E000FA46B /* TVShows.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TVShows.xcdatamodel; sourceTree = "<group>"; };
 		AA5DEECA2549D213000FA46B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +73,15 @@
 		AA5DEEF82549E656000FA46B /* DetalleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleViewController.swift; sourceTree = "<group>"; };
 		AA5DEEFA2549E710000FA46B /* TvShowsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowsTableViewController.swift; sourceTree = "<group>"; };
 		AA5DEEFC2549E738000FA46B /* FavoriteShowsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteShowsTableViewController.swift; sourceTree = "<group>"; };
+		AA5DEF0A2549FDA6000FA46B /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		AA5DEF0C2549FE19000FA46B /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
+		AA5DEF0E2549FE68000FA46B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		AA5DEF102549FEA5000FA46B /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		AA5DEF12254A001F000FA46B /* Externals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Externals.swift; sourceTree = "<group>"; };
+		AA5DEF14254A00E5000FA46B /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		AA5DEF1B254A0453000FA46B /* TvShowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowService.swift; sourceTree = "<group>"; };
+		AA5DEF1D254A1A6C000FA46B /* TvShowRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowRes.swift; sourceTree = "<group>"; };
+		AA5DEF1F254A1D2E000FA46B /* WebChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebChannel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +102,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA43E97D254B115700048662 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				AA43E9A2254B2C9900048662 /* Series+CoreDataClass.swift */,
+				AA43E9A3254B2C9900048662 /* Series+CoreDataProperties.swift */,
+				AA43E9A4254B2C9900048662 /* Detalle+CoreDataClass.swift */,
+				AA43E9A5254B2C9900048662 /* Detalle+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		AA5DEEB22549D20E000FA46B = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +160,8 @@
 		AA5DEEE32549DAB5000FA46B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AA43E97D254B115700048662 /* CoreData */,
+				AA5DEF082549FD89000FA46B /* Responses */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -143,7 +182,6 @@
 		AA5DEEE52549DABF000FA46B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AA5DEEC22549D20E000FA46B /* ViewController.swift */,
 				AA5DEEFA2549E710000FA46B /* TvShowsTableViewController.swift */,
 				AA5DEEFC2549E738000FA46B /* FavoriteShowsTableViewController.swift */,
 				AA5DEEE62549DB78000FA46B /* CeldaPeliculaTableViewCell.swift */,
@@ -155,6 +193,7 @@
 		AA5DEEF12549E3DC000FA46B /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				AA43E980254B1E9800048662 /* ShowsRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -162,8 +201,24 @@
 		AA5DEEF22549E3F6000FA46B /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AA5DEF1B254A0453000FA46B /* TvShowService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		AA5DEF082549FD89000FA46B /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				AA5DEF1D254A1A6C000FA46B /* TvShowRes.swift */,
+				AA5DEF0A2549FDA6000FA46B /* Schedule.swift */,
+				AA5DEF0C2549FE19000FA46B /* Rating.swift */,
+				AA5DEF0E2549FE68000FA46B /* Network.swift */,
+				AA5DEF102549FEA5000FA46B /* Country.swift */,
+				AA5DEF12254A001F000FA46B /* Externals.swift */,
+				AA5DEF14254A00E5000FA46B /* Image.swift */,
+				AA5DEF1F254A1D2E000FA46B /* WebChannel.swift */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,13 +327,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA5DEEF92549E656000FA46B /* DetalleViewController.swift in Sources */,
-				AA5DEEC32549D20E000FA46B /* ViewController.swift in Sources */,
+				AA5DEF0F2549FE68000FA46B /* Network.swift in Sources */,
 				AA5DEEE82549DB78000FA46B /* CeldaPeliculaTableViewCell.swift in Sources */,
+				AA5DEF1E254A1A6C000FA46B /* TvShowRes.swift in Sources */,
 				AA5DEEFB2549E710000FA46B /* TvShowsTableViewController.swift in Sources */,
+				AA43E9A8254B2C9900048662 /* Detalle+CoreDataClass.swift in Sources */,
+				AA43E981254B1E9800048662 /* ShowsRepository.swift in Sources */,
 				AA5DEEFD2549E738000FA46B /* FavoriteShowsTableViewController.swift in Sources */,
+				AA5DEF112549FEA5000FA46B /* Country.swift in Sources */,
+				AA5DEF13254A001F000FA46B /* Externals.swift in Sources */,
 				AA5DEEBF2549D20E000FA46B /* AppDelegate.swift in Sources */,
+				AA5DEF15254A00E5000FA46B /* Image.swift in Sources */,
+				AA5DEF1C254A0454000FA46B /* TvShowService.swift in Sources */,
+				AA5DEF20254A1D2E000FA46B /* WebChannel.swift in Sources */,
+				AA43E9A7254B2C9900048662 /* Series+CoreDataProperties.swift in Sources */,
 				AA5DEEC92549D20E000FA46B /* TVShows.xcdatamodeld in Sources */,
+				AA5DEF0D2549FE19000FA46B /* Rating.swift in Sources */,
+				AA5DEF0B2549FDA6000FA46B /* Schedule.swift in Sources */,
+				AA43E9A6254B2C9900048662 /* Series+CoreDataClass.swift in Sources */,
 				AA5DEEC12549D20E000FA46B /* SceneDelegate.swift in Sources */,
+				AA43E9A9254B2C9900048662 /* Detalle+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,7 +525,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bancoazteca.TVShows;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -476,7 +544,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bancoazteca.TVShows;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

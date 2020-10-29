@@ -32,6 +32,14 @@ class TvShowsTableViewController: UITableViewController {
         self.navigationController?.navigationBar.backgroundColor = UIColor(named: "Barras")
     }
     
+    private func alerta(status: Bool) -> Void {
+        let titulo = status ? "Guardado" : "Error"
+        let mensaje = status ? "Se agrego a favoritos" : "Error al guardar"
+        let alerta = UIAlertController(title: titulo, message: mensaje, preferredStyle: .alert)
+        alerta.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(alerta, animated: true, completion: nil)
+    }
+    
     // MARK: - Data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -49,7 +57,8 @@ class TvShowsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let favoritos = UIContextualAction(style: .normal, title: "Favoritos") {  (contextualAction, view, boolValue) in
-            
+            let res = ShowsRepository.guardar(tvShow: self.tvShows[indexPath.row])
+            self.alerta(status: res)
         }
         favoritos.backgroundColor = .green
         let swipeActions = UISwipeActionsConfiguration(actions: [favoritos])
@@ -65,7 +74,7 @@ class TvShowsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detalle" {
             let detalle = segue.destination as! DetalleViewController
-            detalle.id = seleccion
+            detalle.llamadaDesdeWeb(idTvShow: seleccion)
         }
     }
     
