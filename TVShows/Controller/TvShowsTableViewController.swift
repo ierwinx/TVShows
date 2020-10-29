@@ -67,14 +67,15 @@ class TvShowsTableViewController: UITableViewController {
     
     //MARK: Delegados
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        seleccion = indexPath.row + 1
+        seleccion = indexPath.row
         performSegue(withIdentifier: "detalle", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detalle" {
             let detalle = segue.destination as! DetalleViewController
-            detalle.llamadaDesdeWeb(idTvShow: seleccion)
+            let serie = tvShows[seleccion]
+            detalle.llamada(idTvShow: serie.id!, tvShow: nil)
         }
     }
     

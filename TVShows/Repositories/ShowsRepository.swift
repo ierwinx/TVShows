@@ -70,9 +70,9 @@ class ShowsRepository {
         }
         
         var generosString = ""
-        if generos.count < 0 {
+        if generos.count > 0 {
             generos.forEach { i in
-                generosString += "\(i), "
+                generosString += "\(i) "
             }
         } else {
             generosString = "unknown"
