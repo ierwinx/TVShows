@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA34CDEE254C7C3F00241132 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA34CDED254C7C3F00241132 /* SceneDelegate.swift */; };
 		AA43933A254C6107000E6A2E /* Detalle+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA439336254C6107000E6A2E /* Detalle+CoreDataClass.swift */; };
 		AA43933B254C6107000E6A2E /* Detalle+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA439337254C6107000E6A2E /* Detalle+CoreDataProperties.swift */; };
 		AA43933C254C6107000E6A2E /* Series+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA439338254C6107000E6A2E /* Series+CoreDataClass.swift */; };
@@ -14,7 +15,6 @@
 		AA43E981254B1E9800048662 /* ShowsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA43E980254B1E9800048662 /* ShowsRepository.swift */; };
 		AA43E9AD254B6FDB00048662 /* Detalle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA43E9AC254B6FDB00048662 /* Detalle.storyboard */; };
 		AA5DEEBF2549D20E000FA46B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5DEEBE2549D20E000FA46B /* AppDelegate.swift */; };
-		AA5DEEC12549D20E000FA46B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5DEEC02549D20E000FA46B /* SceneDelegate.swift */; };
 		AA5DEEC62549D20E000FA46B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA5DEEC42549D20E000FA46B /* Main.storyboard */; };
 		AA5DEEC92549D20E000FA46B /* TVShows.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA5DEEC72549D20E000FA46B /* TVShows.xcdatamodeld */; };
 		AA5DEECB2549D213000FA46B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA5DEECA2549D213000FA46B /* Assets.xcassets */; };
@@ -49,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA34CDED254C7C3F00241132 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AA439336254C6107000E6A2E /* Detalle+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detalle+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AA439337254C6107000E6A2E /* Detalle+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detalle+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AA439338254C6107000E6A2E /* Series+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Series+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -57,7 +58,6 @@
 		AA43E9AC254B6FDB00048662 /* Detalle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detalle.storyboard; sourceTree = "<group>"; };
 		AA5DEEBB2549D20E000FA46B /* TVShows.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVShows.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA5DEEBE2549D20E000FA46B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AA5DEEC02549D20E000FA46B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AA5DEEC52549D20E000FA46B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA5DEEC82549D20E000FA46B /* TVShows.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TVShows.xcdatamodel; sourceTree = "<group>"; };
 		AA5DEECA2549D213000FA46B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				AA5DEEBE2549D20E000FA46B /* AppDelegate.swift */,
-				AA5DEEC02549D20E000FA46B /* SceneDelegate.swift */,
+				AA34CDED254C7C3F00241132 /* SceneDelegate.swift */,
 				AA5DEEE32549DAB5000FA46B /* Model */,
 				AA5DEEE42549DABA000FA46B /* View */,
 				AA5DEEE52549DABF000FA46B /* Controller */,
@@ -334,6 +334,7 @@
 				AA5DEEFB2549E710000FA46B /* TvShowsTableViewController.swift in Sources */,
 				AA43E981254B1E9800048662 /* ShowsRepository.swift in Sources */,
 				AA5DEEFD2549E738000FA46B /* FavoriteShowsTableViewController.swift in Sources */,
+				AA34CDEE254C7C3F00241132 /* SceneDelegate.swift in Sources */,
 				AA5DEF112549FEA5000FA46B /* Country.swift in Sources */,
 				AA5DEF13254A001F000FA46B /* Externals.swift in Sources */,
 				AA5DEEBF2549D20E000FA46B /* AppDelegate.swift in Sources */,
@@ -346,7 +347,6 @@
 				AA5DEEC92549D20E000FA46B /* TVShows.xcdatamodeld in Sources */,
 				AA5DEF0D2549FE19000FA46B /* Rating.swift in Sources */,
 				AA5DEF0B2549FDA6000FA46B /* Schedule.swift in Sources */,
-				AA5DEEC12549D20E000FA46B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,7 +517,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5933M745D6;
 				INFOPLIST_FILE = TVShows/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -536,7 +536,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5933M745D6;
 				INFOPLIST_FILE = TVShows/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
