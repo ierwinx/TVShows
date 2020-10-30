@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA12694C254C88620053E07D /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = AA12694B254C88620053E07D /* SkeletonView */; };
 		AA34CDEE254C7C3F00241132 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA34CDED254C7C3F00241132 /* SceneDelegate.swift */; };
 		AA43933A254C6107000E6A2E /* Detalle+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA439336254C6107000E6A2E /* Detalle+CoreDataClass.swift */; };
 		AA43933B254C6107000E6A2E /* Detalle+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA439337254C6107000E6A2E /* Detalle+CoreDataProperties.swift */; };
@@ -89,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA12694C254C88620053E07D /* SkeletonView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +239,9 @@
 			dependencies = (
 			);
 			name = TVShows;
+			packageProductDependencies = (
+				AA12694B254C88620053E07D /* SkeletonView */,
+			);
 			productName = TVShows;
 			productReference = AA5DEEBB2549D20E000FA46B /* TVShows.app */;
 			productType = "com.apple.product-type.application";
@@ -287,6 +292,9 @@
 				Base,
 			);
 			mainGroup = AA5DEEB22549D20E000FA46B;
+			packageReferences = (
+				AA12694A254C88620053E07D /* XCRemoteSwiftPackageReference "SkeletonView" */,
+			);
 			productRefGroup = AA5DEEBC2549D20E000FA46B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -623,6 +631,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AA12694A254C88620053E07D /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.8.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AA12694B254C88620053E07D /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA12694A254C88620053E07D /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		AA5DEEC72549D20E000FA46B /* TVShows.xcdatamodeld */ = {

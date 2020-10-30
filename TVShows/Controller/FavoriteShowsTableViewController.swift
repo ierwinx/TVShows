@@ -19,6 +19,16 @@ class FavoriteShowsTableViewController: UITableViewController {
         self.tableView.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        disenoBarra()
+        let datos = ShowsRepository.consultar()
+        if datos.count > 0 {
+            tvShows = datos
+        }
+        self.tableView.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
+    }
+    
     //MARK: Metodos
     private func disenoBarra() -> Void {
         if #available(iOS 13.0, *) {

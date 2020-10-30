@@ -1,4 +1,5 @@
 import UIKit
+import SkeletonView
 
 class TvShowsTableViewController: UITableViewController {
     
@@ -11,12 +12,15 @@ class TvShowsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         disenoBarra()
+        self.startSkeleton()
         let tvShowService = TvShowService()
         tvShowService.consulta(callBack: { (callBack) in
             self.tvShows = callBack
+            self.stopSkeleton()
             self.tableView.reloadData()
         }) { (errorCall) in
             self.alertaRecarga()
+            self.stopSkeleton()
         }
         self.tableView.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
     }
@@ -49,14 +53,24 @@ class TvShowsTableViewController: UITableViewController {
                 let tvShowService = TvShowService()
                 tvShowService.consulta(callBack: { (callBack) in
                     self.tvShows = callBack
+                    self.stopSkeleton()
                     self.tableView.reloadData()
                 }) { (errorCall) in
                     print(errorCall)
+                    self.stopSkeleton()
                 }
             })
             alerta.addAction(UIAlertAction(title: "Cancelar", style: .destructive))
             self.present(alerta, animated: true, completion: nil)
         }
+    }
+    
+    private func startSkeleton() -> Void {
+        self.tableView.showAnimatedGradientSkeleton()
+    }
+    
+    private func stopSkeleton() -> Void {
+        self.tableView.hideSkeleton()
     }
     
     // MARK: - Data source

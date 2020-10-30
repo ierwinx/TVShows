@@ -1,4 +1,5 @@
 import UIKit
+import SkeletonView
 
 class DetalleViewController: UIViewController {
     
@@ -24,10 +25,13 @@ class DetalleViewController: UIViewController {
         super.viewDidLoad()
         
         agregaGradiente()
+        startSkeleton()
         
         if idTvShow != nil {
             let tTvShowService = TvShowService()
             tTvShowService.consulta(id: idTvShow!) { (callback) in
+                
+                self.stopSkeleton()
                 
                 guard let urlString = callback.image?.original, let nombre = callback.name, let generos = callback.genres, let idioma = callback.language, let descripcion = callback.summary, let promedio = callback.rating?.average else {
                     return
@@ -57,6 +61,7 @@ class DetalleViewController: UIViewController {
                 
             }
         } else {
+            self.stopSkeleton()
             guard let show = tvShow, let detalle = show.detalle, let imagen = detalle.imagen, let nombre = show.name, let genero = detalle.generos, let lenguaje = detalle.language, let descripcion = detalle.detalle  else {
                 return
             }
@@ -132,6 +137,24 @@ class DetalleViewController: UIViewController {
         layer0.bounds = view.bounds.insetBy(dx: -0.5*view.bounds.size.width, dy: -0.5*view.bounds.size.height)
         layer0.position = view.center
         degradadoView.layer.addSublayer(layer0)
+    }
+    
+    private func startSkeleton() -> Void {
+        lenguajeLabel.showAnimatedGradientSkeleton()
+        generoLabel.showAnimatedGradientSkeleton()
+        nombreLabel.showAnimatedGradientSkeleton()
+        descripcionTextView.showAnimatedGradientSkeleton()
+        coverImage.showAnimatedGradientSkeleton()
+        calificacionImage.showAnimatedGradientSkeleton()
+    }
+    
+    private func stopSkeleton() -> Void {
+        lenguajeLabel.hideSkeleton()
+        generoLabel.hideSkeleton()
+        nombreLabel.hideSkeleton()
+        descripcionTextView.hideSkeleton()
+        coverImage.hideSkeleton()
+        calificacionImage.hideSkeleton()
     }
     
 }

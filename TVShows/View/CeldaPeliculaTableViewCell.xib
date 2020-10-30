@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -26,12 +27,18 @@
                                     <constraint firstAttribute="width" constant="50" id="U5Y-Ub-iP7"/>
                                     <constraint firstAttribute="height" constant="76" id="g0m-lv-HTa"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFC-9b-DMy">
                                 <rect key="frame" x="73" y="0.0" width="370" height="76"/>
                                 <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="22"/>
                                 <color key="textColor" name="Texto"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xP8-Fp-sJ6">
                                 <rect key="frame" x="466" y="0.0" width="15" height="76"/>
@@ -57,7 +64,7 @@
                 <outlet property="imagen" destination="xQJ-X6-daF" id="4ll-iT-Ke5"/>
                 <outlet property="titulo" destination="EFC-9b-DMy" id="EDp-jE-FwB"/>
             </connections>
-            <point key="canvasLocation" x="268.84057971014494" y="185.49107142857142"/>
+            <point key="canvasLocation" x="266" y="185"/>
         </tableViewCell>
     </objects>
     <resources>
