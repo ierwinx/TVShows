@@ -12,9 +12,11 @@ class TvShowsTableViewController: UITableViewController {
         super.viewDidLoad()
         disenoBarra()
         let tvShowService = TvShowService()
-        tvShowService.consulta { (callback) in
-            self.tvShows = callback
+        tvShowService.consulta(callBack: { (callBack) in
+            self.tvShows = callBack
             self.tableView.reloadData()
+        }) { (errorCall) in
+            self.alertaRecarga()
         }
         self.tableView.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
     }
@@ -32,12 +34,29 @@ class TvShowsTableViewController: UITableViewController {
         self.navigationController?.navigationBar.backgroundColor = UIColor(named: "Barras")
     }
     
-    private func alerta(status: Bool) -> Void {
-        let titulo = status ? "Guardado" : "Error"
-        let mensaje = status ? "Se agrego a favoritos" : "Error al guardar"
+    private func alerta(status: Bool, eliminar: Bool) -> Void {
+        let titulo = status ? (eliminar ? "Eliminado" : "Guardado") : "Oops, algo salió mal!"
+        let mensaje = status ? (eliminar ? "Se elimino de favoritos" : "Se agrego a favoritos") : "Hubo un problema al guardar este show de TV"
         let alerta = UIAlertController(title: titulo, message: mensaje, preferredStyle: .alert)
         alerta.addAction(UIAlertAction(title: "Ok", style: .default))
         present(alerta, animated: true, completion: nil)
+    }
+    
+    private func alertaRecarga() -> Void {
+        DispatchQueue.main.async {
+            let alerta = UIAlertController(title: "Oops, algo salió mal!", message: "Hubo un error al consultar el servicio. ¿Quieres intentar nuevamente?", preferredStyle: .alert)
+            alerta.addAction(UIAlertAction(title: "Aceptar", style: .default) { (UIAlertAction) in
+                let tvShowService = TvShowService()
+                tvShowService.consulta(callBack: { (callBack) in
+                    self.tvShows = callBack
+                    self.tableView.reloadData()
+                }) { (errorCall) in
+                    print(errorCall)
+                }
+            })
+            alerta.addAction(UIAlertAction(title: "Cancelar", style: .destructive))
+            self.present(alerta, animated: true, completion: nil)
+        }
     }
     
     // MARK: - Data source
@@ -56,12 +75,19 @@ class TvShowsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let favoritos = UIContextualAction(style: .normal, title: "Favoritos") {  (contextualAction, view, boolValue) in
-            let res = ShowsRepository.guardar(tvShow: self.tvShows[indexPath.row])
-            self.alerta(status: res)
+        let serie = self.tvShows[indexPath.row]
+        
+        let serieEncontrada = ShowsRepository.consultar(id: serie.id!)
+        
+        var swipeActions = UISwipeActionsConfiguration()
+        
+        let accion = UIContextualAction(style: .normal, title: serieEncontrada == nil ? "Favoritos" : "Eliminar") {  (contextualAction, view, boolValue) in
+            let res = serieEncontrada == nil ? ShowsRepository.guardar(tvShow: self.tvShows[indexPath.row]) : ShowsRepository.eliminar(id: serie.id!)
+            self.alerta(status: res, eliminar: serieEncontrada != nil)
         }
-        favoritos.backgroundColor = .green
-        let swipeActions = UISwipeActionsConfiguration(actions: [favoritos])
+        accion.backgroundColor = serieEncontrada == nil ? .green : .red
+        swipeActions = UISwipeActionsConfiguration(actions: [accion])
+        
         return swipeActions
     }
     

@@ -17,6 +17,7 @@ extension Detalle {
     @NSManaged public var language: String?
     @NSManaged public var pais: String?
     @NSManaged public var rating: Double
+    @NSManaged public var imdb: URL?
     @NSManaged public var serie: Series?
 
 }

@@ -60,6 +60,10 @@ class ShowsRepository {
             generosString = "unknown"
         }
         
+        var imdbID: URL? = nil
+        if let imdb = tvShow.externals?.imdb {
+            imdbID = URL(string: "https://www.imdb.com/title/\(imdb)/")
+        }
         
         guard let url = URL(string: imagen) else { return false }
         guard let imgData = try? Data.init(contentsOf: url) else { return false }
@@ -89,6 +93,7 @@ class ShowsRepository {
         detalle.language = tvShow.language ?? "unknown"
         detalle.pais = tvShow.webChannel?.country?.name ?? "unknown"
         detalle.rating = tvShow.rating?.average ?? 10.0
+        detalle.imdb = imdbID
         
         detalle.serie = serie
 

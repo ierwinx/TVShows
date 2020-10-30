@@ -10,15 +10,20 @@ class DetalleViewController: UIViewController {
     @IBOutlet weak var coverImage: UIImageView!
     @IBOutlet weak var likeImage: UIImageView!
     @IBOutlet weak var calificacionImage: UIImageView!
+    @IBOutlet weak var imdbButton: UIButton!
+    @IBOutlet weak var degradadoView: UIView!
     
     //MARK: Propiedades
     public var idTvShow: Int!
     public var tvShow: Series!
     public var tvShowRes: TvShowRes!
+    private var imdbID: URL?
     
     //MARK: Ciclo de vida
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        agregaGradiente()
         
         if idTvShow != nil {
             let tTvShowService = TvShowService()
@@ -34,6 +39,12 @@ class DetalleViewController: UIViewController {
                 var generosString = ""
                 generos.forEach { i in
                     generosString += "\(i) "
+                }
+                
+                if let imdb = callback.externals?.imdb {
+                    self.imdbID = URL(string: "https://www.imdb.com/title/\(imdb)/")
+                } else {
+                    self.imdbButton.isHidden = true
                 }
                 
                 self.likeImage.image = self.validaFavorito(id: self.idTvShow!) ? UIImage(named: "like2") : UIImage(named: "like1")
@@ -57,9 +68,19 @@ class DetalleViewController: UIViewController {
             self.lenguajeLabel.text = lenguaje
             self.calificacionImage.image = UIImage(named: "\(Int(round(detalle.rating * 0.5)))")
             self.descripcionTextView.text = descripcion
+            if let imdb = detalle.imdb {
+                self.imdbID = imdb
+            } else {
+                self.imdbButton.isHidden = true
+            }
         }
         
         tocarCorazon(view: likeImage)
+    }
+    
+    //MARK: Actions
+    @IBAction func imdbAction(_ sender: Any) {
+        UIApplication.shared.open(self.imdbID!)
     }
     
     //MARK: Eventos
@@ -90,11 +111,27 @@ class DetalleViewController: UIViewController {
     }
     
     private func alerta(valida: Bool, eliminar: Bool) -> Void {
-        let titulo = valida ? ( eliminar ? "Eliminado" : "Guardado" ) : "Error"
-        let mensaje = valida ? ( eliminar ? "Se elimino de tus favoritos" : "Se agrego a favoritos" ) : "Error al realizar operación"
+        let titulo = valida ? ( eliminar ? "Eliminado" : "Guardado" ) : "Oops, algo salió mal!"
+        let mensaje = valida ? ( eliminar ? "Se elimino de tus favoritos" : "Se agrego a favoritos" ) : "Hubo un problema al guardar/borrar este show de TV"
         let alerta = UIAlertController(title: titulo, message: mensaje, preferredStyle: .alert)
         alerta.addAction(UIAlertAction(title: "Ok", style: .default))
         present(alerta, animated: true, completion: nil)
+    }
+    
+    private func agregaGradiente() -> Void {
+        let layer0 = CAGradientLayer()
+        layer0.colors = [
+          UIColor(red: 0, green: 0, blue: 0, alpha: 0).cgColor,
+          UIColor(red: 0, green: 0, blue: 0, alpha: 1).cgColor
+        ]
+
+        layer0.locations = [0, 1]
+        layer0.startPoint = CGPoint(x: 0.25, y: 0.5)
+        layer0.endPoint = CGPoint(x: 0.75, y: 0.5)
+        layer0.transform = CATransform3DMakeAffineTransform(CGAffineTransform(a: 0, b: 1, c: -1, d: 0, tx: 1, ty: 0))
+        layer0.bounds = view.bounds.insetBy(dx: -0.5*view.bounds.size.width, dy: -0.5*view.bounds.size.height)
+        layer0.position = view.center
+        degradadoView.layer.addSublayer(layer0)
     }
     
 }

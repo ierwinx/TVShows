@@ -8,6 +8,7 @@
         <attribute name="generos" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="imagen" optional="YES" attributeType="Binary"/>
+        <attribute name="imdb" optional="YES" attributeType="URI"/>
         <attribute name="language" optional="YES" attributeType="String"/>
         <attribute name="pais" optional="YES" attributeType="String"/>
         <attribute name="rating" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
@@ -20,7 +21,7 @@
         <relationship name="detalle" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Detalle" inverseName="serie" inverseEntity="Detalle"/>
     </entity>
     <elements>
-        <element name="Detalle" positionX="0" positionY="72" width="128" height="208"/>
+        <element name="Detalle" positionX="0" positionY="72" width="128" height="223"/>
         <element name="Series" positionX="-431.3984375" positionY="142.9765625" width="128" height="103"/>
     </elements>
 </model>

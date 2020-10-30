@@ -32,8 +32,8 @@ class FavoriteShowsTableViewController: UITableViewController {
     }
     
     private func alerta(status: Bool) -> Void {
-        let titulo = status ? "Eliminado" : "Error"
-        let mensaje = status ? "Se elimino de favoritos" : "Error al eliminar"
+        let titulo = status ? "Eliminado" : "Oops, algo salió mal!"
+        let mensaje = status ? "Se elimino de favoritos" : "Hubo un problema al eliminar este show de TV"
         let alerta = UIAlertController(title: titulo, message: mensaje, preferredStyle: .alert)
         alerta.addAction(UIAlertAction(title: "Ok", style: .default))
         present(alerta, animated: true, completion: nil)

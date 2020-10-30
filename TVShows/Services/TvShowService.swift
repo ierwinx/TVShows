@@ -4,7 +4,7 @@ class TvShowService {
     
     private let urlBase = "http://api.tvmaze.com/"
     
-    public func consulta(callBack: @escaping ([TvShowRes])->()) -> Void {
+    public func consulta(callBack: @escaping ([TvShowRes])->(), errorCallBack: @escaping (Error)->()) -> Void {
         print("Se buscara lista")
         
         guard let endpoint: URL = URL(string: "\(urlBase)shows") else {
@@ -19,7 +19,7 @@ class TvShowService {
         let tarea = URLSession.shared.dataTask(with: request) { data, response, error in
             if error != nil {
                 print("Hubo un error")
-                print(error!)
+                errorCallBack(error!)
                 return
             }
             
