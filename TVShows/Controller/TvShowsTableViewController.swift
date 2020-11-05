@@ -11,18 +11,22 @@ class TvShowsTableViewController: UITableViewController {
     //MARK: Ciclo de vida
     override func viewDidLoad() {
         super.viewDidLoad()
-        //disenoBarra()
+        disenoBarra()
         self.startSkeleton()
         let tvShowService = TvShowService()
-        tvShowService.consulta { (error, resultado) in
-            if error != nil {
-                self.alertaRecarga()
-                self.stopSkeleton()
-                return
+        DispatchQueue.global(qos: .background).async {
+            tvShowService.consulta { (error, resultado) in
+                if error != nil {
+                    self.alertaRecarga()
+                    self.stopSkeleton()
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.tvShows = resultado
+                    self.stopSkeleton()
+                    self.tableView.reloadData()
+                }
             }
-            self.tvShows = resultado
-            self.stopSkeleton()
-            self.tableView.reloadData()
         }
         
         self.tableView.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
@@ -38,6 +42,8 @@ class TvShowsTableViewController: UITableViewController {
         }
         self.navigationController?.navigationBar.barStyle = .black
         self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.barTintColor = UIColor(named: "BarraTexto")
+        self.navigationController?.navigationBar.tintColor = UIColor(named: "BarraTexto")
         self.navigationController?.navigationBar.backgroundColor = UIColor(named: "Barras")
     }
     
@@ -54,15 +60,19 @@ class TvShowsTableViewController: UITableViewController {
             let alerta = UIAlertController(title: "Oops, algo salió mal!", message: "Hubo un error al consultar el servicio. ¿Quieres intentar nuevamente?", preferredStyle: .alert)
             alerta.addAction(UIAlertAction(title: "Aceptar", style: .default) { (UIAlertAction) in
                 let tvShowService = TvShowService()
-                tvShowService.consulta { (error, resultado) in
-                    if error != nil {
-                        print(error!)
-                        self.stopSkeleton()
-                        return
+                DispatchQueue.global(qos: .background).async {
+                    tvShowService.consulta { (error, resultado) in
+                        if error != nil {
+                            print(error!)
+                            self.stopSkeleton()
+                            return
+                        }
+                        DispatchQueue.main.async {
+                            self.tvShows = resultado
+                            self.stopSkeleton()
+                            self.tableView.reloadData()
+                        }
                     }
-                    self.tvShows = resultado
-                    self.stopSkeleton()
-                    self.tableView.reloadData()
                 }
             })
             alerta.addAction(UIAlertAction(title: "Cancelar", style: .destructive))

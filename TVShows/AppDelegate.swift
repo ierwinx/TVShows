@@ -7,18 +7,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window : UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        if #available(iOS 13.0, *) {
-            let app = UINavigationBarAppearance()
-            app.backgroundColor = UIColor(named: "Barras")
-            UINavigationController().navigationController?.navigationBar.scrollEdgeAppearance = app
-            UINavigationController().navigationController?.navigationBar.compactAppearance = app
-        }
-        //UINavigationController().navigationController?.navigationBar.barStyle = .black
-        UINavigationController().navigationController?.navigationBar.isTranslucent = true
-        UINavigationController().navigationController?.navigationBar.barTintColor = UIColor(named: "Barras")
-        //UINavigationController().navigationController?.navigationBar.bar
-        UINavigationController().navigationController?.navigationBar.backgroundColor = UIColor(named: "Barras")
-        UINavigationController().navigationController?.navigationBar.tintColor = UIColor(named: "BarraTexto")
         return true
     }
 

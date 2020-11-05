@@ -11,25 +11,25 @@ class FavoriteShowsTableViewController: UITableViewController {
     //MARK: Ciclo de vida
     override func viewDidLoad() {
         super.viewDidLoad()
-        //disenoBarra()
-        let datos = ShowsRepository.consultar()
-        if datos.count > 0 {
-            tvShows = datos
-        }
-        self.tableView.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
+        cargaDatos()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
+        cargaDatos()
+    }
+    
+    //MARK: Metodos
+    private func cargaDatos() -> Void {
         disenoBarra()
         let datos = ShowsRepository.consultar()
         if datos.count > 0 {
             tvShows = datos
+            self.tableView.reloadData()
         }
         self.tableView.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
     }
     
-    //MARK: Metodos
     private func disenoBarra() -> Void {
         if #available(iOS 13.0, *) {
             let app = UINavigationBarAppearance()
@@ -38,6 +38,8 @@ class FavoriteShowsTableViewController: UITableViewController {
         }
         self.navigationController?.navigationBar.barStyle = .black
         self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.barTintColor = UIColor(named: "BarraTexto")
+        self.navigationController?.navigationBar.tintColor = UIColor(named: "BarraTexto")
         self.navigationController?.navigationBar.backgroundColor = UIColor(named: "Barras")
     }
     
