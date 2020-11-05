@@ -11,7 +11,6 @@ class FavoriteShowsTableViewController: UITableViewController {
     //MARK: Ciclo de vida
     override func viewDidLoad() {
         super.viewDidLoad()
-        cargaDatos()
     }
     
     override func viewWillAppear(_ animated: Bool) {
