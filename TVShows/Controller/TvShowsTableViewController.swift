@@ -11,17 +11,20 @@ class TvShowsTableViewController: UITableViewController {
     //MARK: Ciclo de vida
     override func viewDidLoad() {
         super.viewDidLoad()
-        disenoBarra()
+        //disenoBarra()
         self.startSkeleton()
         let tvShowService = TvShowService()
-        tvShowService.consulta(callBack: { (callBack) in
-            self.tvShows = callBack
+        tvShowService.consulta { (error, resultado) in
+            if error != nil {
+                self.alertaRecarga()
+                self.stopSkeleton()
+                return
+            }
+            self.tvShows = resultado
             self.stopSkeleton()
             self.tableView.reloadData()
-        }) { (errorCall) in
-            self.alertaRecarga()
-            self.stopSkeleton()
         }
+        
         self.tableView.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
     }
     
@@ -51,13 +54,15 @@ class TvShowsTableViewController: UITableViewController {
             let alerta = UIAlertController(title: "Oops, algo salió mal!", message: "Hubo un error al consultar el servicio. ¿Quieres intentar nuevamente?", preferredStyle: .alert)
             alerta.addAction(UIAlertAction(title: "Aceptar", style: .default) { (UIAlertAction) in
                 let tvShowService = TvShowService()
-                tvShowService.consulta(callBack: { (callBack) in
-                    self.tvShows = callBack
+                tvShowService.consulta { (error, resultado) in
+                    if error != nil {
+                        print(error!)
+                        self.stopSkeleton()
+                        return
+                    }
+                    self.tvShows = resultado
                     self.stopSkeleton()
                     self.tableView.reloadData()
-                }) { (errorCall) in
-                    print(errorCall)
-                    self.stopSkeleton()
                 }
             })
             alerta.addAction(UIAlertAction(title: "Cancelar", style: .destructive))

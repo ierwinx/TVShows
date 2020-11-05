@@ -11,7 +11,7 @@ class FavoriteShowsTableViewController: UITableViewController {
     //MARK: Ciclo de vida
     override func viewDidLoad() {
         super.viewDidLoad()
-        disenoBarra()
+        //disenoBarra()
         let datos = ShowsRepository.consultar()
         if datos.count > 0 {
             tvShows = datos

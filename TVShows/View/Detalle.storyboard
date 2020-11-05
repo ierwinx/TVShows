@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nkz-or-nfD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nkz-or-nfD">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -36,7 +37,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3LF-yi-fQc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3LF-yi-fQc">
                                 <rect key="frame" x="346" y="508.5" width="48" height="33"/>
                                 <fontDescription key="fontDescription" name="Charter-Black" family="Charter" pointSize="17"/>
                                 <state key="normal" title="IMDb"/>
@@ -103,7 +104,8 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="VuT-7Z-Ddz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="45P-qk-UgS" firstAttribute="leading" secondItem="VuT-7Z-Ddz" secondAttribute="leading" constant="20" id="2Mm-Jz-BU2"/>
                             <constraint firstItem="DzU-9m-Gr6" firstAttribute="trailing" secondItem="VuT-7Z-Ddz" secondAttribute="trailing" id="2gc-SG-6xu"/>
@@ -136,7 +138,6 @@
                             <constraint firstAttribute="bottom" secondItem="Ukg-A2-RJr" secondAttribute="bottom" constant="20" id="rXQ-nr-qyX"/>
                             <constraint firstItem="6fK-QM-Hr5" firstAttribute="leading" secondItem="VuT-7Z-Ddz" secondAttribute="leading" id="w9D-S9-6p5"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="VuT-7Z-Ddz"/>
                     </view>
                     <connections>
                         <outlet property="calificacionImage" destination="j1J-SI-Xgx" id="3n9-b1-Fxf"/>
@@ -160,5 +161,8 @@
         <namedColor name="BarraTexto">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
