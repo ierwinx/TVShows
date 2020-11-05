@@ -13,6 +13,7 @@ class DetalleViewController: UIViewController {
     @IBOutlet weak var calificacionImage: UIImageView!
     @IBOutlet weak var imdbButton: UIButton!
     @IBOutlet weak var degradadoView: UIView!
+    @IBOutlet weak var closeButton: UIButton!
     
     //MARK: Propiedades
     public var idTvShow: Int!
@@ -26,6 +27,10 @@ class DetalleViewController: UIViewController {
         
         agregaGradiente()
         startSkeleton()
+        
+        if #available(iOS 13, *) {
+            closeButton.isHidden = true
+        }
         
         if idTvShow != nil {
             let tTvShowService = TvShowService()
@@ -86,6 +91,10 @@ class DetalleViewController: UIViewController {
     //MARK: Actions
     @IBAction func imdbAction(_ sender: Any) {
         UIApplication.shared.open(self.imdbID!)
+    }
+    
+    @IBAction func closeAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     //MARK: Eventos

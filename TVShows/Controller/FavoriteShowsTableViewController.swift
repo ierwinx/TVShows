@@ -34,10 +34,11 @@ class FavoriteShowsTableViewController: UITableViewController {
             let app = UINavigationBarAppearance()
             app.backgroundColor = UIColor(named: "Barras")
             self.navigationController?.navigationBar.scrollEdgeAppearance = app
+            self.navigationController?.navigationBar.compactAppearance = app
         }
         self.navigationController?.navigationBar.barStyle = .black
         self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.navigationBar.barTintColor = UIColor(named: "BarraTexto")
+        self.navigationController?.navigationBar.barTintColor = UIColor(named: "Barras")
         self.navigationController?.navigationBar.tintColor = UIColor(named: "BarraTexto")
         self.navigationController?.navigationBar.backgroundColor = UIColor(named: "Barras")
     }

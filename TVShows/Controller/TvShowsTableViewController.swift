@@ -42,7 +42,7 @@ class TvShowsTableViewController: UITableViewController {
         }
         self.navigationController?.navigationBar.barStyle = .black
         self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.navigationBar.barTintColor = UIColor(named: "BarraTexto")
+        self.navigationController?.navigationBar.barTintColor = UIColor(named: "Barras")
         self.navigationController?.navigationBar.tintColor = UIColor(named: "BarraTexto")
         self.navigationController?.navigationBar.backgroundColor = UIColor(named: "Barras")
     }

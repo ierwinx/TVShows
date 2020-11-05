@@ -57,6 +57,18 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xo-uT-Qrd">
+                                <rect key="frame" x="394" y="468" width="0.0" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="R1C-j8-FXd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="17"/>
+                                <color key="textColor" name="BarraTexto"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="j1J-SI-Xgx">
                                 <rect key="frame" x="20" y="508" width="136" height="31"/>
                                 <constraints>
@@ -79,18 +91,20 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xo-uT-Qrd">
-                                <rect key="frame" x="394" y="468" width="0.0" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWP-d4-Z72">
+                                <rect key="frame" x="20" y="64" width="75" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="R1C-j8-FXd"/>
+                                    <constraint firstAttribute="height" constant="29" id="edU-Rw-9ew"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="17"/>
-                                <color key="textColor" name="BarraTexto"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="  Cerrar" image="chevron.down.circle.fill" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeAction:" destination="nkz-or-nfD" eventType="touchUpInside" id="uxl-Kb-bMt"/>
+                                </connections>
+                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4lM-3u-drI">
                                 <rect key="frame" x="334" y="64" width="60" height="60"/>
                                 <constraints>
@@ -111,8 +125,10 @@
                             <constraint firstItem="DzU-9m-Gr6" firstAttribute="trailing" secondItem="VuT-7Z-Ddz" secondAttribute="trailing" id="2gc-SG-6xu"/>
                             <constraint firstItem="VuT-7Z-Ddz" firstAttribute="trailing" secondItem="Ukg-A2-RJr" secondAttribute="trailing" constant="20" id="4hl-w0-ctG"/>
                             <constraint firstItem="DzU-9m-Gr6" firstAttribute="top" secondItem="QNr-xg-Qk8" secondAttribute="top" id="4uE-4E-Mi8"/>
+                            <constraint firstItem="fWP-d4-Z72" firstAttribute="leading" secondItem="VuT-7Z-Ddz" secondAttribute="leading" constant="20" id="Auc-Ix-93m"/>
                             <constraint firstItem="VuT-7Z-Ddz" firstAttribute="trailing" secondItem="45P-qk-UgS" secondAttribute="trailing" constant="20" id="C19-vG-0ml"/>
                             <constraint firstItem="DHL-JQ-MY6" firstAttribute="trailing" secondItem="VuT-7Z-Ddz" secondAttribute="trailing" id="E9g-YB-uwL"/>
+                            <constraint firstItem="fWP-d4-Z72" firstAttribute="top" secondItem="VuT-7Z-Ddz" secondAttribute="top" constant="20" id="EfL-ii-HJ9"/>
                             <constraint firstItem="45P-qk-UgS" firstAttribute="centerX" secondItem="QNr-xg-Qk8" secondAttribute="centerX" id="G4h-5R-gOv"/>
                             <constraint firstAttribute="bottom" secondItem="DzU-9m-Gr6" secondAttribute="bottom" id="IVa-30-qVd"/>
                             <constraint firstItem="DHL-JQ-MY6" firstAttribute="top" secondItem="QNr-xg-Qk8" secondAttribute="top" id="Leq-EE-apx"/>
@@ -128,12 +144,12 @@
                             <constraint firstItem="6fK-QM-Hr5" firstAttribute="trailing" secondItem="VuT-7Z-Ddz" secondAttribute="trailing" id="dQW-Vs-UDu"/>
                             <constraint firstItem="Ukg-A2-RJr" firstAttribute="top" secondItem="j1J-SI-Xgx" secondAttribute="bottom" constant="5" id="fnD-JY-6HP"/>
                             <constraint firstItem="mER-49-xrP" firstAttribute="top" secondItem="45P-qk-UgS" secondAttribute="bottom" constant="20" id="hca-ah-Zij"/>
-                            <constraint firstItem="j1J-SI-Xgx" firstAttribute="top" secondItem="45P-qk-UgS" secondAttribute="bottom" constant="60" id="hu4-7V-lJd"/>
                             <constraint firstItem="6fK-QM-Hr5" firstAttribute="top" secondItem="QNr-xg-Qk8" secondAttribute="top" id="jye-ic-fX5"/>
                             <constraint firstItem="DzU-9m-Gr6" firstAttribute="leading" secondItem="VuT-7Z-Ddz" secondAttribute="leading" id="kMK-G6-69w"/>
                             <constraint firstAttribute="bottom" secondItem="DHL-JQ-MY6" secondAttribute="bottom" id="khT-M7-OUo"/>
                             <constraint firstItem="VuT-7Z-Ddz" firstAttribute="trailing" secondItem="4lM-3u-drI" secondAttribute="trailing" constant="20" id="mh0-GH-nQH"/>
                             <constraint firstItem="DHL-JQ-MY6" firstAttribute="leading" secondItem="VuT-7Z-Ddz" secondAttribute="leading" id="omL-PC-hKd"/>
+                            <constraint firstItem="j1J-SI-Xgx" firstAttribute="top" secondItem="mER-49-xrP" secondAttribute="bottom" constant="10" id="pTr-Zv-M8K"/>
                             <constraint firstItem="3LF-yi-fQc" firstAttribute="top" secondItem="1Xo-uT-Qrd" secondAttribute="bottom" constant="10.5" id="qC1-uq-z3c"/>
                             <constraint firstAttribute="bottom" secondItem="Ukg-A2-RJr" secondAttribute="bottom" constant="20" id="rXQ-nr-qyX"/>
                             <constraint firstItem="6fK-QM-Hr5" firstAttribute="leading" secondItem="VuT-7Z-Ddz" secondAttribute="leading" id="w9D-S9-6p5"/>
@@ -141,6 +157,7 @@
                     </view>
                     <connections>
                         <outlet property="calificacionImage" destination="j1J-SI-Xgx" id="3n9-b1-Fxf"/>
+                        <outlet property="closeButton" destination="fWP-d4-Z72" id="XVi-5Q-DyI"/>
                         <outlet property="coverImage" destination="DzU-9m-Gr6" id="J3U-eR-GpM"/>
                         <outlet property="degradadoView" destination="6fK-QM-Hr5" id="2o2-SU-hvD"/>
                         <outlet property="descripcionTextView" destination="Ukg-A2-RJr" id="T6F-Y6-kUh"/>
@@ -158,6 +175,7 @@
     </scenes>
     <resources>
         <image name="1" width="540" height="130"/>
+        <image name="chevron.down.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="BarraTexto">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
