@@ -42,14 +42,6 @@ class FavoriteShowsTableViewController: UITableViewController {
         self.navigationController?.navigationBar.tintColor = UIColor(named: "BarraTexto")
         self.navigationController?.navigationBar.backgroundColor = UIColor(named: "Barras")
     }
-    
-    private func alerta(status: Bool) -> Void {
-        let titulo = status ? "Eliminado" : "Oops, algo salió mal!"
-        let mensaje = status ? "Se elimino de favoritos" : "Hubo un problema al eliminar este show de TV"
-        let alerta = UIAlertController(title: titulo, message: mensaje, preferredStyle: .alert)
-        alerta.addAction(UIAlertAction(title: "Ok", style: .default))
-        present(alerta, animated: true, completion: nil)
-    }
 
     // MARK: Data source
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -70,24 +62,24 @@ class FavoriteShowsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let eliminar = UIContextualAction(style: .destructive, title: "Eliminar") {  (contextualAction, view, boolValue) in
-            let alerta = UIAlertController(title: "Eliminar", message: "¿Deseas eliminar de favoritos?", preferredStyle: .alert)
-            let si = UIAlertAction(title: "Si", style: .destructive) { accion in
-                let serie = self.tvShows[indexPath.row] as! Series
-                let elimina = ShowsRepository.eliminar(id: Int(serie.id))
-                self.alerta(status: elimina)
-                if elimina {
-                    self.tvShows.remove(at: indexPath.row)
-                    tableView.reloadData()
+            Alertas.preguntaEliminar(controlador: self) { (res) in
+                if res {
+                    let serie = self.tvShows[indexPath.row] as! Series
+                    let elimina = ShowsRepository.eliminar(id: Int(serie.id))
+                    self.present(Alertas.eliminaGuarda(status: elimina, eliminar: true), animated: true, completion: nil)
+                    if elimina {
+                        self.tvShows.remove(at: indexPath.row)
+                        tableView.reloadData()
+                    }
                 }
             }
-            let no = UIAlertAction(title: "No", style: .default, handler: nil)
-            alerta.addAction(si)
-            alerta.addAction(no)
-            
-            self.present(alerta, animated: true, completion: nil)
         }
         let swipeActions = UISwipeActionsConfiguration(actions: [eliminar])
         return swipeActions
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 96
     }
     
     //MARK: Delegados

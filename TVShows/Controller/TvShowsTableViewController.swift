@@ -16,12 +16,12 @@ class TvShowsTableViewController: UITableViewController {
         let tvShowService = TvShowService()
         DispatchQueue.global(qos: .background).async {
             tvShowService.consulta { (error, resultado) in
-                if error != nil {
-                    self.alertaRecarga()
-                    self.stopSkeleton()
-                    return
-                }
                 DispatchQueue.main.async {
+                    if error != nil {
+                        self.alertaRecarga()
+                        self.stopSkeleton()
+                        return
+                    }
                     self.tvShows = resultado
                     self.stopSkeleton()
                     self.tableView.reloadData()
@@ -47,37 +47,28 @@ class TvShowsTableViewController: UITableViewController {
         self.navigationController?.navigationBar.backgroundColor = UIColor(named: "Barras")
     }
     
-    private func alerta(status: Bool, eliminar: Bool) -> Void {
-        let titulo = status ? (eliminar ? "Eliminado" : "Guardado") : "Oops, algo salió mal!"
-        let mensaje = status ? (eliminar ? "Se elimino de favoritos" : "Se agrego a favoritos") : "Hubo un problema al guardar este show de TV"
-        let alerta = UIAlertController(title: titulo, message: mensaje, preferredStyle: .alert)
-        alerta.addAction(UIAlertAction(title: "Ok", style: .default))
-        present(alerta, animated: true, completion: nil)
-    }
-    
     private func alertaRecarga() -> Void {
-        DispatchQueue.main.async {
-            let alerta = UIAlertController(title: "Oops, algo salió mal!", message: "Hubo un error al consultar el servicio. ¿Quieres intentar nuevamente?", preferredStyle: .alert)
-            alerta.addAction(UIAlertAction(title: "Aceptar", style: .default) { (UIAlertAction) in
+
+        Alertas.errorInternet(controlador: self) { (res) in
+            if res {
                 let tvShowService = TvShowService()
                 DispatchQueue.global(qos: .background).async {
                     tvShowService.consulta { (error, resultado) in
-                        if error != nil {
-                            print(error!)
-                            self.stopSkeleton()
-                            return
-                        }
                         DispatchQueue.main.async {
+                            if error != nil {
+                                self.alertaRecarga()
+                                self.stopSkeleton()
+                                return
+                            }
                             self.tvShows = resultado
                             self.stopSkeleton()
                             self.tableView.reloadData()
                         }
                     }
                 }
-            })
-            alerta.addAction(UIAlertAction(title: "Cancelar", style: .destructive))
-            self.present(alerta, animated: true, completion: nil)
+            }
         }
+        
     }
     
     private func startSkeleton() -> Void {
@@ -111,13 +102,25 @@ class TvShowsTableViewController: UITableViewController {
         var swipeActions = UISwipeActionsConfiguration()
         
         let accion = UIContextualAction(style: .normal, title: serieEncontrada == nil ? "Favoritos" : "Eliminar") {  (contextualAction, view, boolValue) in
-            let res = serieEncontrada == nil ? ShowsRepository.guardar(tvShow: self.tvShows[indexPath.row]) : ShowsRepository.eliminar(id: serie.id!)
-            self.alerta(status: res, eliminar: serieEncontrada != nil)
+            if serieEncontrada == nil {
+                self.present(Alertas.eliminaGuarda(status: ShowsRepository.guardar(tvShow: self.tvShows[indexPath.row]), eliminar: false), animated: true, completion: nil)
+            } else {
+                Alertas.preguntaEliminar(controlador: self) { (res) in
+                    if res {
+                        let res = serieEncontrada == nil ? ShowsRepository.guardar(tvShow: self.tvShows[indexPath.row]) : ShowsRepository.eliminar(id: serie.id!)
+                        self.present(Alertas.eliminaGuarda(status: res, eliminar: serieEncontrada != nil), animated: true, completion: nil)
+                    }
+                }
+            }
         }
         accion.backgroundColor = serieEncontrada == nil ? .green : .red
         swipeActions = UISwipeActionsConfiguration(actions: [accion])
         
         return swipeActions
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 96
     }
     
     //MARK: Delegados

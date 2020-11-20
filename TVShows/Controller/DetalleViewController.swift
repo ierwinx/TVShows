@@ -107,12 +107,11 @@ class DetalleViewController: UIViewController {
     @objc private func corazonTocado(sender: UITapGestureRecognizer) -> Void {
         if self.likeImage.image == UIImage(named: "like1") {
             self.likeImage.image = UIImage(named: "like2")
-            self.alerta(valida: ShowsRepository.guardar(tvShow: tvShowRes), eliminar: false)
+            self.present(Alertas.eliminaGuarda(status: ShowsRepository.guardar(tvShow: tvShowRes), eliminar: false), animated: true, completion: nil)
         } else {
             self.likeImage.image = UIImage(named: "like1")
-            self.alerta(valida: ShowsRepository.eliminar(id: idTvShow != nil ? idTvShow : Int(tvShow.id)), eliminar: true)
+            self.present(Alertas.eliminaGuarda(status: ShowsRepository.eliminar(id: idTvShow != nil ? idTvShow : Int(tvShow.id)), eliminar: true), animated: true, completion: nil)
         }
-        
     }
     
     //MARK: Metodos
@@ -122,14 +121,6 @@ class DetalleViewController: UIViewController {
         }
 
         return true
-    }
-    
-    private func alerta(valida: Bool, eliminar: Bool) -> Void {
-        let titulo = valida ? ( eliminar ? "Eliminado" : "Guardado" ) : "Oops, algo salió mal!"
-        let mensaje = valida ? ( eliminar ? "Se elimino de tus favoritos" : "Se agrego a favoritos" ) : "Hubo un problema al guardar/borrar este show de TV"
-        let alerta = UIAlertController(title: titulo, message: mensaje, preferredStyle: .alert)
-        alerta.addAction(UIAlertAction(title: "Ok", style: .default))
-        present(alerta, animated: true, completion: nil)
     }
     
     private func agregaGradiente() -> Void {

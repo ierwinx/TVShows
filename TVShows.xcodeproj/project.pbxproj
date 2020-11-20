@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AA12694C254C88620053E07D /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = AA12694B254C88620053E07D /* SkeletonView */; };
+		AA2C0C4B25681BBE00637433 /* Alertas.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2C0C4A25681BBE00637433 /* Alertas.swift */; };
 		AA34CDEE254C7C3F00241132 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA34CDED254C7C3F00241132 /* SceneDelegate.swift */; };
 		AA43933A254C6107000E6A2E /* Detalle+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA439336254C6107000E6A2E /* Detalle+CoreDataClass.swift */; };
 		AA43933B254C6107000E6A2E /* Detalle+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA439337254C6107000E6A2E /* Detalle+CoreDataProperties.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA2C0C4A25681BBE00637433 /* Alertas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertas.swift; sourceTree = "<group>"; };
 		AA34CDED254C7C3F00241132 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AA439336254C6107000E6A2E /* Detalle+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detalle+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AA439337254C6107000E6A2E /* Detalle+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detalle+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -104,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA2C0C4925681BAA00637433 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AA2C0C4A25681BBE00637433 /* Alertas.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		AA43E97D254B115700048662 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +153,7 @@
 				AA5DEEE52549DABF000FA46B /* Controller */,
 				AA5DEEF12549E3DC000FA46B /* Repositories */,
 				AA5DEEF22549E3F6000FA46B /* Services */,
+				AA2C0C4925681BAA00637433 /* Helpers */,
 				AA5DEECA2549D213000FA46B /* Assets.xcassets */,
 				AA5DEECF2549D213000FA46B /* Info.plist */,
 				AA5DEEC72549D20E000FA46B /* TVShows.xcdatamodeld */,
@@ -271,7 +282,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1170;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1210;
 				ORGANIZATIONNAME = Erwin;
 				TargetAttributes = {
 					AA5DEEBA2549D20E000FA46B = {
@@ -334,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA2C0C4B25681BBE00637433 /* Alertas.swift in Sources */,
 				AA43933C254C6107000E6A2E /* Series+CoreDataClass.swift in Sources */,
 				AA5DEEF92549E656000FA46B /* DetalleViewController.swift in Sources */,
 				AA5DEF0F2549FE68000FA46B /* Network.swift in Sources */,
@@ -525,14 +537,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9TPTHP2V2G;
+				DEVELOPMENT_TEAM = 5933M745D6;
 				INFOPLIST_FILE = TVShows/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bugsoft.TVShows;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bancoazteca.TVShows;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -544,14 +556,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9TPTHP2V2G;
+				DEVELOPMENT_TEAM = 5933M745D6;
 				INFOPLIST_FILE = TVShows/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bugsoft.TVShows;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bancoazteca.TVShows;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
