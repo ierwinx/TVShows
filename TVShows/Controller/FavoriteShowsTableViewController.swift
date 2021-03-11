@@ -31,16 +31,10 @@ class FavoriteShowsTableViewController: UITableViewController {
     
     private func disenoBarra() -> Void {
         if #available(iOS 13.0, *) {
-            let app = UINavigationBarAppearance()
-            app.backgroundColor = UIColor(named: "Barras")
-            self.navigationController?.navigationBar.scrollEdgeAppearance = app
-            self.navigationController?.navigationBar.compactAppearance = app
+            let statusBar = UIView(frame: UIApplication.shared.windows.first?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero)
+            statusBar.backgroundColor = UIColor(named: "Barras")
+            UIApplication.shared.windows.first?.addSubview(statusBar)
         }
-        self.navigationController?.navigationBar.barStyle = .black
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.navigationBar.barTintColor = UIColor(named: "Barras")
-        self.navigationController?.navigationBar.tintColor = UIColor(named: "BarraTexto")
-        self.navigationController?.navigationBar.backgroundColor = UIColor(named: "Barras")
     }
 
     // MARK: Data source
@@ -91,8 +85,19 @@ class FavoriteShowsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detalle" {
             let detalle = segue.destination as! DetalleViewController
+            detalle.tvShowDelegate = self
             let serie = tvShows[seleccion] as! Series
             detalle.tvShow = serie
+        }
+    }
+    
+}
+
+extension FavoriteShowsTableViewController: TvShowsDelegate {
+    
+    func respuestaGuardato(favorito: Bool?) {
+        if let respFavo = favorito, !respFavo {
+            self.tableView.reloadData()
         }
     }
     

@@ -13,59 +13,39 @@ class TvShowsTableViewController: UITableViewController {
         super.viewDidLoad()
         disenoBarra()
         self.startSkeleton()
-        let tvShowService = TvShowService()
-        DispatchQueue.global(qos: .background).async {
-            tvShowService.consulta { (error, resultado) in
-                DispatchQueue.main.async {
-                    if error != nil {
-                        self.alertaRecarga()
-                        self.stopSkeleton()
-                        return
-                    }
-                    self.tvShows = resultado
-                    self.stopSkeleton()
-                    self.tableView.reloadData()
-                }
-            }
-        }
-        
+        self.traerInformacion()
         self.tableView.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
     }
     
     //MARK: Metodos
     private func disenoBarra() -> Void {
         if #available(iOS 13.0, *) {
-            let app = UINavigationBarAppearance()
-            app.backgroundColor = UIColor(named: "Barras")
-            self.navigationController?.navigationBar.scrollEdgeAppearance = app
-            self.navigationController?.navigationBar.compactAppearance = app
+            let statusBar = UIView(frame: UIApplication.shared.windows.first?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero)
+            statusBar.backgroundColor = UIColor(named: "Barras")
+            UIApplication.shared.windows.first?.addSubview(statusBar)
         }
-        self.navigationController?.navigationBar.barStyle = .black
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.navigationBar.barTintColor = UIColor(named: "Barras")
-        self.navigationController?.navigationBar.tintColor = UIColor(named: "BarraTexto")
-        self.navigationController?.navigationBar.backgroundColor = UIColor(named: "Barras")
+    }
+    
+    private func traerInformacion() -> Void {
+        let tvShowService = TvShowService()
+        tvShowService.consulta { (error, resultado) in
+            DispatchQueue.main.async {
+                self.stopSkeleton()
+                if error != nil {
+                    self.alertaRecarga()
+                    return
+                }
+                self.tvShows = resultado
+                self.tableView.reloadData()
+            }
+        }
     }
     
     private func alertaRecarga() -> Void {
 
         Alertas.errorInternet(controlador: self) { (res) in
             if res {
-                let tvShowService = TvShowService()
-                DispatchQueue.global(qos: .background).async {
-                    tvShowService.consulta { (error, resultado) in
-                        DispatchQueue.main.async {
-                            if error != nil {
-                                self.alertaRecarga()
-                                self.stopSkeleton()
-                                return
-                            }
-                            self.tvShows = resultado
-                            self.stopSkeleton()
-                            self.tableView.reloadData()
-                        }
-                    }
-                }
+                self.traerInformacion()
             }
         }
         

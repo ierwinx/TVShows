@@ -5,7 +5,9 @@ class ShowsRepository {
     
     public static func consultar() -> Array<NSManagedObject> {
         
-        let managedObjectContext: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        guard let managedObjectContext: NSManagedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else {
+            return []
+        }
         
         let entidad: String = "Series"
         let peticion = NSFetchRequest<Series>(entityName: entidad)
@@ -21,7 +23,9 @@ class ShowsRepository {
     }
     
     public static func consultar(id: Int) -> NSManagedObject? {
-        let managedObjectContext: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        guard let managedObjectContext: NSManagedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else {
+            return nil
+        }
         
         let entidad: String = "Series"
         let peticion = NSFetchRequest<Series>(entityName: entidad)
@@ -71,7 +75,9 @@ class ShowsRepository {
         guard let url2 = URL(string: imagen2) else { return false }
         guard let imgData2 = try? Data.init(contentsOf: url2) else { return false }
         
-        let managedObjectContext: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        guard let managedObjectContext: NSManagedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else {
+            return false
+        }
 
         let entidad: String = "Series"
         guard let entity = NSEntityDescription.entity(forEntityName: entidad, in: managedObjectContext) else { return false }
@@ -107,7 +113,9 @@ class ShowsRepository {
     }
     
     public static func eliminar(id: Int) -> Bool {
-        let managedObjectContext: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        guard let managedObjectContext: NSManagedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else {
+            return false
+        }
         
         let entidad: String = "Series"
         let peticion = NSFetchRequest<Series>(entityName: entidad)

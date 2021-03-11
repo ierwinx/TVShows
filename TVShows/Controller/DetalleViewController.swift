@@ -20,6 +20,7 @@ class DetalleViewController: UIViewController {
     public var tvShow: Series!
     public var tvShowRes: TvShowRes!
     private var imdbID: URL?
+    public var tvShowDelegate: TvShowsDelegate?
     
     //MARK: Ciclo de vida
     override func viewDidLoad() {
@@ -107,9 +108,11 @@ class DetalleViewController: UIViewController {
     @objc private func corazonTocado(sender: UITapGestureRecognizer) -> Void {
         if self.likeImage.image == UIImage(named: "like1") {
             self.likeImage.image = UIImage(named: "like2")
+            self.tvShowDelegate?.respuestaGuardato(favorito: true)
             self.present(Alertas.eliminaGuarda(status: ShowsRepository.guardar(tvShow: tvShowRes), eliminar: false), animated: true, completion: nil)
         } else {
             self.likeImage.image = UIImage(named: "like1")
+            self.tvShowDelegate?.respuestaGuardato(favorito: false)
             self.present(Alertas.eliminaGuarda(status: ShowsRepository.eliminar(id: idTvShow != nil ? idTvShow : Int(tvShow.id)), eliminar: true), animated: true, completion: nil)
         }
     }

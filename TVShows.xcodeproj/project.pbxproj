@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82CBBC2125FADE33000AD641 /* TvShowsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBBC2025FADE33000AD641 /* TvShowsDelegate.swift */; };
 		AA12694C254C88620053E07D /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = AA12694B254C88620053E07D /* SkeletonView */; };
 		AA2C0C4B25681BBE00637433 /* Alertas.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2C0C4A25681BBE00637433 /* Alertas.swift */; };
 		AA34CDEE254C7C3F00241132 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA34CDED254C7C3F00241132 /* SceneDelegate.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		82CBBC2025FADE33000AD641 /* TvShowsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowsDelegate.swift; sourceTree = "<group>"; };
 		AA2C0C4A25681BBE00637433 /* Alertas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertas.swift; sourceTree = "<group>"; };
 		AA34CDED254C7C3F00241132 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AA439336254C6107000E6A2E /* Detalle+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detalle+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -106,6 +108,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		82CBBC1F25FADE1C000AD641 /* Protocolos */ = {
+			isa = PBXGroup;
+			children = (
+				82CBBC2025FADE33000AD641 /* TvShowsDelegate.swift */,
+			);
+			path = Protocolos;
+			sourceTree = "<group>";
+		};
 		AA2C0C4925681BAA00637433 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +163,7 @@
 				AA5DEEE52549DABF000FA46B /* Controller */,
 				AA5DEEF12549E3DC000FA46B /* Repositories */,
 				AA5DEEF22549E3F6000FA46B /* Services */,
+				82CBBC1F25FADE1C000AD641 /* Protocolos */,
 				AA2C0C4925681BAA00637433 /* Helpers */,
 				AA5DEECA2549D213000FA46B /* Assets.xcassets */,
 				AA5DEECF2549D213000FA46B /* Info.plist */,
@@ -358,6 +369,7 @@
 				AA5DEF112549FEA5000FA46B /* Country.swift in Sources */,
 				AA5DEF13254A001F000FA46B /* Externals.swift in Sources */,
 				AA5DEEBF2549D20E000FA46B /* AppDelegate.swift in Sources */,
+				82CBBC2125FADE33000AD641 /* TvShowsDelegate.swift in Sources */,
 				AA5DEF15254A00E5000FA46B /* Image.swift in Sources */,
 				AA43933D254C6107000E6A2E /* Series+CoreDataProperties.swift in Sources */,
 				AA43933B254C6107000E6A2E /* Detalle+CoreDataProperties.swift in Sources */,
