@@ -83,6 +83,7 @@ class FavoriteShowsTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
         if segue.identifier == "detalle" {
             let detalle = segue.destination as! DetalleViewController
             detalle.tvShowDelegate = self

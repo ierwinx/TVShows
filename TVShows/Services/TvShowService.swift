@@ -4,42 +4,45 @@ class TvShowService {
     
     private let urlBase = "http://api.tvmaze.com/"
     
-    public func consulta(callBack: @escaping (Error?, [TvShowRes])->()){
-        print("Se buscara lista")
-        
-        guard let endpoint: URL = URL(string: "\(urlBase)shows") else {
-            print("Error formando url")
-            return
-        }
-        
-        var request = URLRequest(url: endpoint)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "GET"
-        
-        let tarea = URLSession.shared.dataTask(with: request) { data, response, error in
-            if error != nil {
-                print("Hubo un error")
-                callBack(error!, [])
+    public func consulta(callBack: @escaping (Error?, [TvShowRes])->()) {
+        DispatchQueue.global(qos: .utility).async {
+            print("Se buscara lista")
+            
+            guard let endpoint: URL = URL(string: "\(self.urlBase)shows") else {
+                print("Error formando url")
                 return
             }
             
-            guard let dataRes = data, let tvShows: [TvShowRes] = try? JSONDecoder().decode([TvShowRes].self, from: dataRes) else {
-                print("No se pudo parsear")
-                return
-            }
+            var request = URLRequest(url: endpoint)
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpMethod = "GET"
             
-            DispatchQueue.main.async {
-                callBack(nil, tvShows)
+            let tarea = URLSession.shared.dataTask(with: request) { data, response, error in
+                if error != nil {
+                    print("Hubo un error")
+                    callBack(error!, [])
+                    return
+                }
+                
+                guard let dataRes = data, let tvShows: [TvShowRes] = try? JSONDecoder().decode([TvShowRes].self, from: dataRes) else {
+                    print("No se pudo parsear")
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    callBack(nil, tvShows)
+                }
+                
             }
-            
+            tarea.resume()
         }
-        tarea.resume()
     }
     
     public func consulta(id: Int, callBack: @escaping (TvShowRes)->()) -> Void {
+        DispatchQueue.global(qos: .utility).async {
         print("Se buscara Detalle")
         
-        guard let endpoint: URL = URL(string: "\(urlBase)shows/\(id)") else {
+        guard let endpoint: URL = URL(string: "\(self.urlBase)shows/\(id)") else {
             print("Error formando url")
             return
         }
@@ -66,6 +69,7 @@ class TvShowService {
             
         }
         tarea.resume()
+        }
     }
     
 }
